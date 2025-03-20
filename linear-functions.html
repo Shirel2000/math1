@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פונקציה קווית - חיתוך ישרים</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4a76a8;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            background-color: #3a5a78;
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            min-height: 80vh;
+        }
+        .math-example {
+            background-color: #f9f9f9;
+            border-right: 4px solid #4a76a8;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        footer {
+            background-color: #4a76a8;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 20px;
+        }
+        .lesson {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .lesson:last-child {
+            border-bottom: none;
+        }
+        .step {
+            margin: 15px 0;
+            padding-right: 15px;
+        }
+        .graph {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .exercise {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .solution {
+            display: none;
+            background-color: #f0f8ff;
+            padding: 10px;
+            margin-top: 10px;
+            border-right: 3px solid #4682b4;
+        }
+        .show-solution {
+            background-color: #4a76a8;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background-color: #3a5a78;
+        }
+        .answer-input {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .answer-input input {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-right: 10px;
+            direction: ltr;
+            text-align: center;
+            width: 60px;
+        }
+        .check-answer {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .check-answer:hover {
+            background-color: #3e8e41;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 3px;
+        }
+        .correct {
+            background-color: #DFF2BF;
+            color: #4F8A10;
+            border: 1px solid #4F8A10;
+        }
+        .incorrect {
+            background-color: #FFBABA;
+            color: #D8000C;
+            border: 1px solid #D8000C;
+        }
+        .reset-button {
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .reset-button:hover {
+            background-color: #ec971f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>פונקציה קווית וחיתוך ישרים</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">דף הבית</a>
+        <a href="lessons.html">שיעורים</a>
+        <a href="exercises.html">תרגילים</a>
+        <a href="resources.html">חומרי עזר</a>
+        <a href="linear-functions.html">פונקציה קווית</a>
+    </nav>
+    
+    <div class="container">
+        <h2>פונקציה קווית וחיתוך ישרים</h2>
+        
+        <div class="lesson">
+            <h3>מהי פונקציה קווית?</h3>
+            
+            <p>פונקציה קווית היא פונקציה מהצורה \( f(x) = mx + b \), כאשר:</p>
+            <ul>
+                <li>\( m \) הוא שיפוע הישר</li>
+                <li>\( b \) הוא נקודת החיתוך עם ציר ה-y</li>
+            </ul>
+            
+            <div class="math-example">
+                <p>דוגמאות לפונקציות קוויות:</p>
+                <ul>
+                    <li>\( f(x) = 2x + 3 \) - פונקציה עם שיפוע חיובי (2) ונקודת חיתוך עם ציר ה-y בנקודה (0, 3)</li>
+                    <li>\( f(x) = -x + 1 \) - פונקציה עם שיפוע שלילי (-1) ונקודת חיתוך עם ציר ה-y בנקודה (0, 1)</li>
+                    <li>\( f(x) = 3x \) - פונקציה עם שיפוע חיובי (3) שעוברת דרך ראשית הצירים (0, 0)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="lesson">
+            <h3>שיפוע הישר - \( m \)</h3>
+            
+            <p>שיפוע הישר \( m \) מתאר את "תלילות" הישר:</p>
+            <ul>
+                <li>אם \( m > 0 \) - הישר עולה משמאל לימין</li>
+                <li>אם \( m < 0 \) - הישר יורד משמאל לימין</li>
+                <li>אם \( m = 0 \) - הישר אופקי (מקביל לציר ה-x)</li>
+            </ul>
+            
+            <p>ניתן לחשב את שיפוע הישר בין שתי נקודות \( (x_1, y_1) \) ו-\( (x_2, y_2) \) באמצעות הנוסחה:</p>
+            <p style="text-align: center; font-size: 1.2em;">\( m = \frac{y_2 - y_1}{x_2 - x_1} \)</p>
+            
+            <div class="math-example">
+                <p>לדוגמה, אם נתונות הנקודות (1, 2) ו-(4, 8), השיפוע הוא:</p>
+                <p>\( m = \frac{8 - 2}{4 - 1} = \frac{6}{3} = 2 \)</p>
+            </div>
+        </div>
+        
+        <div class="lesson">
+            <h3>נקודת חיתוך עם ציר ה-y - \( b \)</h3>
+            
+            <p>הערך \( b \) מייצג את הנקודה שבה הישר חותך את ציר ה-y, כלומר הערך של הפונקציה כאשר \( x = 0 \).</p>
+            
+            <div class="math-example">
+                <p>בפונקציה \( f(x) = 2x + 3 \), כאשר \( x = 0 \), מתקבל \( f(0) = 2 \cdot 0 + 3 = 3 \).</p>
+                <p>לכן, נקודת החיתוך עם ציר ה-y היא בנקודה (0, 3).</p>
+            </div>
+        </div>
+        
+        <div class="lesson">
+            <h3>חיתוך בין שני ישרים</h3>
+            
+            <p>שני ישרים שאינם מקבילים נחתכים בנקודה אחת. כדי למצוא את נקודת החיתוך בין שני ישרים, יש למצוא את הערך של \( x \) ו-\( y \) שמקיימים את שתי משוואות הישרים בו-זמנית.</p>
+            
+            <div class="step">
+                <h4>צעד 1: רשום את משוואות שני הישרים</h4>
+                <p>נניח שיש לנו שני ישרים:</p>
+                <p>\( y = m_1 x + b_1 \)</p>
+                <p>\( y = m_2 x + b_2 \)</p>
+            </div>
+            
+            <div class="step">
+                <h4>צעד 2: השווה את שני ביטויי ה-y</h4>
+                <p>בנקודת החיתוך, ערך ה-y זהה בשני הישרים, לכן:</p>
+                <p>\( m_1 x + b_1 = m_2 x + b_2 \)</p>
+            </div>
+            
+            <div class="step">
+                <h4>צעד 3: פתור את המשוואה עבור x</h4>
+                <p>\( m_1 x + b_1 = m_2 x + b_2 \)</p>
+                <p>\( m_1 x - m_2 x = b_2 - b_1 \)</p>
+                <p>\( x(m_1 - m_2) = b_2 - b_1 \)</p>
+                <p>\( x = \frac{b_2 - b_1}{m_1 - m_2} \)</p>
+            </div>
+            
+            <div class="step">
+                <h4>צעד 4: מצא את ערך ה-y בנקודת החיתוך</h4>
+                <p>לאחר שמצאת את ערך ה-x, הצב אותו באחת ממשוואות הישרים כדי למצוא את ערך ה-y:</p>
+                <p>\( y = m_1 \cdot x + b_1 \) או \( y = m_2 \cdot x + b_2 \)</p>
+            </div>
+            
+            <div class="math-example">
+                <h4>דוגמה לחיתוך ישרים:</h4>
+                <p>מצא את נקודת החיתוך בין הישרים:</p>
+                <p>\( y = 2x + 1 \)</p>
+                <p>\( y = -x + 7 \)</p>
+                
+                <p><strong>צעד 1:</strong> משוואות הישרים נתונות.</p>
+                
+                <p><strong>צעד 2:</strong> נשווה בין שני ביטויי ה-y:</p>
+                <p>\( 2x + 1 = -x + 7 \)</p>
+                
+                <p><strong>צעד 3:</strong> נפתור עבור x:</p>
+                <p>\( 2x + 1 = -x + 7 \)</p>
+                <p>\( 2x + x = 7 - 1 \)</p>
+                <p>\( 3x = 6 \)</p>
+                <p>\( x = 2 \)</p>
+                
+                <p><strong>צעד 4:</strong> נמצא את ערך ה-y עבור x = 2:</p>
+                <p>\( y = 2 \cdot 2 + 1 = 4 + 1 = 5 \)</p>
+                <p>(ניתן לבדוק גם בישר השני: \( y = -2 + 7 = 5 \))</p>
+                
+                <p>לכן, נקודת החיתוך בין שני הישרים היא (2, 5).</p>
+            </div>
+            
+            <div class="graph">
+                <svg width="400" height="400" viewBox="-10 -10 20 20">
+                    <!-- ציר ה-x -->
+                    <line x1="-10" y1="0" x2="10" y2="0" stroke="black" stroke-width="0.1" />
+                    <!-- ציר ה-y -->
+                    <line x1="0" y1="-10" x2="0" y2="10" stroke="black" stroke-width="0.1" />
+                    
+                    <!-- סימוני צירים -->
+                    <text x="9.5" y="0.6" font-size="0.8">x</text>
+                    <text x="0.3" y="-9.5" font-size="0.8">y</text>
+                    
+                    <!-- סימוני מספרים על הצירים -->
+                    <text x="4.8" y="0.6" font-size="0.6">5</text>
+                    <text x="-5.2" y="0.6" font-size="0.6">-5</text>
+                    <text x="0.3" y="-4.8" font-size="0.6">5</text>
+                    <text x="0.3" y="5.2" font-size="0.6">-5</text>
+                    
+                    <!-- קווי רשת -->
+                    <g stroke="lightgray" stroke-width="0.05">
+                        <line x1="-10" y1="-5" x2="10" y2="-5" />
+                        <line x1="-10" y1="-4" x2="10" y2="-4" />
+                        <line x1="-10" y1="-3" x2="10" y2="-3" />
+                        <line x1="-10" y1="-2" x2="10" y2="-2" />
+                        <line x1="-10" y1="-1" x2="10" y2="-1" />
+                        <line x1="-10" y1="1" x2="10" y2="1" />
+                        <line x1="-10" y1="2" x2="10" y2="2" />
+                        <line x1="-10" y1="3" x2="10" y2="3" />
+                        <line x1="-10" y1="4" x2="10" y2="4" />
+                        <line x1="-10" y1="5" x2="10" y2="5" />
+                        
+                        <line x1="-5" y1="-10" x2="-5" y2="10" />
+                        <line x1="-4" y1="-10" x2="-4" y2="10" />
+                        <line x1="-3" y1="-10" x2="-3" y2="10" />
+                        <line x1="-2" y1="-10" x2="-2" y2="10" />
+                        <line x1="-1" y1="-10" x2="-1" y2="10" />
+                        <line x1="1" y1="-10" x2="1" y2="10" />
+                        <line x1="2" y1="-10" x2="2" y2="10" />
+                        <line x1="3" y1="-10" x2="3" y2="10" />
+                        <line x1="4" y1="-10" x2="4" y2="10" />
+                        <line x1="5" y1="-10" x2="5" y2="10" />
+                    </g>
+                    
+                    <!-- הישר הראשון: y = 2x + 1 -->
+                    <line x1="-5" y1="-9" x2="5" y2="11" stroke="red" stroke-width="0.2" />
+                    <text x="3" y="-6.5" fill="red" font-size="0.8">y = 2x + 1</text>
+                    
+                    <!-- הישר השני: y = -x + 7 -->
+                    <line x1="-3" y1="10" x2="7" y2="0" stroke="blue" stroke-width="0.2" />
+                    <text x="-7" y="-3" fill="blue" font-size="0.8">y = -x + 7</text>
+                    
+                    <!-- נקודת החיתוך -->
+                    <circle cx="2" cy="-5" r="0.2" fill="purple" />
+                    <text x="2.2" y="-4.7" fill="purple" font-size="0.7">(2, 5)</text>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="lesson">
+            <h3>מקרים מיוחדים</h3>
+            
+            <div class="math-example">
+                <h4>ישרים מקבילים</h4>
+                <p>אם שני הישרים מקבילים, כלומר בעלי אותו שיפוע (\( m_1 = m_2 \)), אז אין נקודת חיתוך ביניהם.</p>
+                <p>לדוגמה, הישרים \( y = 2x + 1 \) ו-\( y = 2x + 3 \) הם מקבילים ואין להם נקודת חיתוך.</p>
+            </div>
+            
+            <div class="math-example">
+                <h4>ישרים מתלכדים</h4>
+                <p>אם שני הישרים זהים לחלוטין (אותו שיפוע ואותה נקודת חיתוך עם ציר ה-y), אז הם מתלכדים ויש אינסוף נקודות חיתוך.</p>
+                <p>לדוגמה, הישרים \( y = 2x + 1 \) ו-\( y = 2x + 1 \) הם למעשה אותו ישר.</p>
+            </div>
+        </div>
+        
+        <div class="exercise-section">
+            <h3>תרגיל אינטראקטיבי: חיתוך ישרים</h3>
+            
+            <div class="exercise">
+                <p><strong>תרגיל:</strong> מצא את נקודת החיתוך בין שני הישרים:</p>
+                <p style="text-align: center; font-size: 1.2em;">\( y = 3x - 2 \)</p>
+                <p style="text-align: center; font-size: 1.2em;">\( y = -2x + 8 \)</p>
+                
+                <div class="answer-input">
+                    <label>שיעור x של נקודת החיתוך: </label>
+                    <input type="text" id="intersectionX" class="answer">
+                </div>
+                
+                <div class="answer-input" style="margin-top: 10px;">
+                    <label>שיעור y של נקודת החיתוך: </label>
+                    <input type="text" id="intersectionY" class="answer">
+                    <button class="check-answer" onclick="checkIntersection()">בדיקה</button>
+                    <button class="reset-button" onclick="resetIntersection()">נסה שוב</button>
+                </div>
+                
+                <div id="intersectionFeedback" class="feedback"></div>
+                
+                <button class="show-solution" onclick="toggleSolution('intersectionSolution')">הצג פתרון מלא</button>
+                <div id="intersectionSolution" class="solution">
+                    <p><strong>פתרון:</strong></p>
+                    <p>נשווה בין שני ביטויי ה-y:</p>
+                    <p>\( 3x - 2 = -2x + 8 \)</p>
+                    <p>\( 3x + 2x = 8 + 2 \)</p>
+                    <p>\( 5x = 10 \)</p>
+                    <p>\( x = 2 \)</p>
+                    
+                    <p>כעת נמצא את ערך ה-y עבור x = 2:</p>
+                    <p>\( y = 3 \cdot 2 - 2 = 6 - 2 = 4 \)</p>
+                    <p>(ניתן לבדוק גם בישר השני: \( y = -2 \cdot 2 + 8 = -4 + 8 = 4 \))</p>
+                    
+                    <p>לכן, נקודת החיתוך בין שני הישרים היא (2, 4).</p>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <p><strong>תרגיל נוסף:</strong> בדוק אם הישרים הבאים מקבילים, מתלכדים, או נחתכים:</p>
+                <p style="text-align: center; font-size: 1.2em;">\( y = 2x + 5 \)</p>
+                <p style="text-align: center; font-size: 1.2em;">\( y = 2x - 3 \)</p>
+                
+                <div class="answer-input">
+                    <label>התשובה: </label>
+                    <select id="lineRelation">
+                        <option value="">בחר תשובה</option>
+                        <option value="parallel">הישרים מקבילים</option>
+                        <option value="intersect">הישרים נחתכים</option>
+                        <option value="identical">הישרים מתלכדים</option>
+                    </select>
+                    <button class="check-answer" onclick="checkLineRelation()">בדיקה</button>
+                    <button class="reset-button" onclick="resetLineRelation()">נסה שוב</button>
+                </div>
+                
+                <div id="relationFeedback" class="feedback"></div>
+                
+                <button class="show-solution" onclick="toggleSolution('relationSolution')">הצג פתרון מלא</button>
+                <div id="relationSolution" class="solution">
+                    <p><strong>פתרון:</strong></p>
+                    <p>הישר הראשון: \( y = 2x + 5 \) - שיפוע 2, חיתוך עם ציר ה-y בנקודה (0, 5)</p>
+                    <p>הישר השני: \( y = 2x - 3 \) - שיפוע 2, חיתוך עם ציר ה-y בנקודה (0, -3)</p>
+                    
+                    <p>מכיוון ששני הישרים בעלי אותו שיפוע (2) אך חיתוך שונה עם ציר ה-y (5 ו-(-3)), הישרים <strong>מקבילים</strong> ואין להם נקודת חיתוך.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 כל הזכויות שמורות - אתר מתמטיקה לכיתה ח'</p>
+    </footer>
+
+    <!-- הוספת MathJax לתצוגת נוסחאות מתמטיות -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['\\(','\\)']]}
+        });
+    </script>
+    
+    <!-- JavaScript לתצוגת פתרונות ובדיקת תשובות -->
+    <script>
+        function toggleSolution(id) {
+            const solution = document.getElementById(id);
+            if (solution.style.display === "block") {
+                solution.style.display = "none";
+            } else {
+                solution.style.display = "block";
+            }
+        }
+        
+        function checkIntersection() {
+            const xInput = document.getElementById('intersectionX');
+            const yInput = document.getElementById('intersectionY');
+            const feedbackElement = document.getElementById('intersectionFeedback');
+            
+            // ניקוי רווחים מיותרים וסימנים
+            const xAnswer = xInput.value.trim().replace(/\s+/g, '');
+            const yAnswer = yInput.value.trim().replace(/\s+/g, '');
+            
+            // בדיקת התשובה
+            if (xAnswer === '2' && yAnswer === '4') {
+                feedbackElement.textContent = "נכון! נקודת החיתוך היא (2, 4).";
+                feedbackElement.className = "feedback correct";
+                xInput.disabled = true;
+                yInput.disabled = true;
+            } else {
+                feedbackElement.textContent = "לא נכון. נסה שוב.";
+                feedbackElement.className = "feedback incorrect";
+            }
+            
+            feedbackElement.style.display = "block";
+        }
+        
+        function resetIntersection() {
+            const xInput = document.getElementById('intersectionX');
+            const yInput = document.getElementById('intersectionY');
+            const feedbackElement = document.getElementById('intersectionFeedback');
+            
+            xInput.value = "";
+            yInput.value = "";
+            xInput.disabled = false;
+            yInput.disabled = false;
+            feedbackElement.style.display = "none";
+        }
+        
+        function checkLineRelation() {
+            const relationInput = document.getElementById('lineRelation');
+            const feedbackElement = document.getElementById('relationFeedback');
+            
+            // בדיקת התשובה
+            if (relationInput.value === 'parallel') {
+                feedbackElement.textContent = "נכון! הישרים מקבילים כי יש להם אותו שיפוע (2) אך חיתוך שונה עם ציר ה-y.";
+                feedbackElement.className = "feedback correct";
+                relationInput.disabled = true;
+            } else {
+                feedbackElement.textContent = "לא נכון. חשוב על שיפוע הישרים.";
+                feedbackElement.className = "feedback incorrect";
+            }
+            
+            feedbackElement.style.display = "block";
+        }
+        
+        function resetLineRelation() {
+            const relationInput = document.getElementById('lineRelation');
+            const feedbackElement = document.getElementById('relationFeedback');
+            
+            relationInput.value = "";
+            relationInput.disabled = false;
+            feedbackElement.style.display = "none";
+        }
+        
+        // יצירת אפשרות לבדיקה גם בלחיצה על Enter
+        document.querySelectorAll('.answer').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    if (this.id === 'intersectionX' || this.id === 'intersectionY') {
+                        checkIntersection();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
