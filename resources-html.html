@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חומרי עזר - משוואות עם מכנה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4a76a8;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            background-color: #3a5a78;
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            min-height: 80vh;
+        }
+        .math-example {
+            background-color: #f9f9f9;
+            border-right: 4px solid #4a76a8;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        footer {
+            background-color: #4a76a8;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 20px;
+        }
+        .resource-section {
+            margin-bottom: 30px;
+        }
+        .resource-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .resource-card h4 {
+            margin-top: 0;
+            color: #4a76a8;
+        }
+        .formula-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .formula-table th, .formula-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: right;
+        }
+        .formula-table th {
+            background-color: #4a76a8;
+            color: white;
+        }
+        .formula-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>חומרי עזר - משוואות עם מכנה</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">דף הבית</a>
+        <a href="lessons.html">שיעורים</a>
+        <a href="exercises.html">תרגילים</a>
+        <a href="resources.html">חומרי עזר</a>
+    </nav>
+    
+    <div class="container">
+        <h2>חומרי עזר למשוואות עם מכנה</h2>
+        
+        <div class="resource-section">
+            <h3>נוסחאות שימושיות</h3>
+            
+            <table class="formula-table">
+                <tr>
+                    <th>נושא</th>
+                    <th>נוסחה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>חיבור שברים</td>
+                    <td>\( \frac{a}{c} + \frac{b}{c} = \frac{a+b}{c} \)</td>
+                    <td>חיבור שברים בעלי מכנה משותף</td>
+                </tr>
+                <tr>
+                    <td>חיבור שברים שונים</td>
+                    <td>\( \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \)</td>
+                    <td>חיבור שברים בעלי מכנים שונים</td>
+                </tr>
+                <tr>
+                    <td>כפל שברים</td>
+                    <td>\( \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} \)</td>
+                    <td>מכפילים מונה במונה ומכנה במכנה</td>
+                </tr>
+                <tr>
+                    <td>חילוק שברים</td>
+                    <td>\( \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc} \)</td>
+                    <td>הופכים את המחלק ומכפילים</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="resource-section">
+            <h3>טיפים לפתרון משוואות עם מכנה</h3>
+            
+            <div class="resource-card">
+                <h4>זכרו לבדוק תנאי קיום!</h4>
+                <p>בכל משוואה עם מכנה, חשוב לבדוק שהפתרון שמצאתם אינו גורם לחלוקה באפס.</p>
+                <p>עבור כל מכנה בצורת \( x - a \), יש להוסיף את התנאי \( x \neq a \).</p>
+            </div>
+            
+            <div class="resource-card">
+                <h4>מציאת מכנה משותף</h4>
+                <p>כדי למצוא מכנה משותף למספרים, אפשר:</p>
+                <ol>
+                    <li>למצוא את המ.מ.ק (המכפלה המשותפת הקטנה) של המספרים</li>
+                    <li>לפרק לגורמים ראשוניים ולהכפיל את כל הגורמים בחזקתם הגבוהה ביותר</li>
+                </ol>
+                <p>דוגמה: המכנה המשותף של 12 ו-18 הוא 36, כי:</p>
+                <p>12 = 2² × 3, 18 = 2 × 3²</p>
+                <p>המכנה המשותף הוא 2² × 3² = 36</p>
+            </div>
+        </div>
+        
+        <div class="resource-section">
+            <h3>דוגמאות מפורטות</h3>
+            
+            <div class="math-example">
+                <h4>דוגמה 1: משוואה עם מכנה אחד</h4>
+                <p>נפתור את המשוואה: \( \frac{2x-3}{5} = 4 \)</p>
+                
+                <p><strong>צעד 1:</strong> נכפיל את שני האגפים ב-5 כדי להיפטר מהמכנה:</p>
+                <p>\( 5 \cdot \frac{2x-3}{5} = 5 \cdot 4 \)</p>
+                <p>\( 2x-3 = 20 \)</p>
+                <p>\( 2x = 23 \)</p>
+                <p>\( x = \frac{23}{2} = 11.5 \)</p>
+                
+                <p><strong>צעד 2:</strong> נבדוק את תנאי הקיום:</p>
+                <p>המכנה במשוואה הוא 5, שהוא קבוע ולא תלוי ב-x, לכן אין תנאי קיום נוספים.</p>
+                
+                <p><strong>התשובה:</strong> \( x = 11.5 \)</p>
+            </div>
+            
+            <div class="math-example">
+                <h4>דוגמה 2: משוואה עם מכנה שיש בו משתנה</h4>
+                <p>נפתור את המשוואה: \( \frac{3}{x-1} = 2 \)</p>
+                
+                <p><strong>צעד 1:</strong> נכפיל את שני האגפים ב-(x-1):</p>
+                <p>\( (x-1) \cdot \frac{3}{x-1} = (x-1) \cdot 2 \)</p>
+                <p>\( 3 = 2(x-1) \)</p>
+                <p>\( 3 = 2x - 2 \)</p>
+                <p>\( 5 = 2x \)</p>
+                <p>\( x = \frac{5}{2} = 2.5 \)</p>
+                
+                <p><strong>צעד 2:</strong> נבדוק את תנאי הקיום:</p>
+                <p>עבור המכנה (x-1), צריך לוודא ש-x≠1</p>
+                <p>הפתרון שמצאנו הוא x=2.5, ומכיוון ש-2.5≠1, הפתרון מקיים את תנאי הקיום.</p>
+                
+                <p><strong>התשובה:</strong> \( x = 2.5 \)</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 כל הזכויות שמורות - אתר משוואות עם מכנה לכיתה ח'</p>
+    </footer>
+
+    <!-- הוספת MathJax לתצוגת נוסחאות מתמטיות -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['\\(','\\)']]}
+        });
+    </script>
+</body>
+</html>
