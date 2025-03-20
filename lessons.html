@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שיעורים - משוואות עם מכנה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4a76a8;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            background-color: #3a5a78;
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            min-height: 80vh;
+        }
+        .math-example {
+            background-color: #f9f9f9;
+            border-right: 4px solid #4a76a8;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        footer {
+            background-color: #4a76a8;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 20px;
+        }
+        .lesson {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .lesson:last-child {
+            border-bottom: none;
+        }
+        .step {
+            margin: 15px 0;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>שיעורים - משוואות עם מכנה</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">דף הבית</a>
+        <a href="lessons.html">שיעורים</a>
+        <a href="exercises.html">תרגילים</a>
+        <a href="resources.html">חומרי עזר</a>
+    </nav>
+    
+    <div class="container">
+        <h2>שיעורים בנושא משוואות עם מכנה</h2>
+        
+        <div class="lesson">
+            <h3>שיעור 1: מבוא למשוואות עם מכנה</h3>
+            
+            <p>משוואה עם מכנה היא משוואה שבה המשתנה (למשל x) מופיע במכנה של שבר אלגברי, או שהביטוי האלגברי כולו נמצא במכנה.</p>
+            
+            <div class="math-example">
+                <p>דוגמאות למשוואות עם מכנה:</p>
+                <ul>
+                    <li>\( \frac{1}{x} + 3 = 5 \)</li>
+                    <li>\( \frac{2}{x-1} = 7 \)</li>
+                    <li>\( \frac{x+3}{2} + \frac{x-1}{3} = 4 \)</li>
+                </ul>
+            </div>
+            
+            <p><strong>חשוב לזכור:</strong> כאשר פותרים משוואות עם מכנה, יש לוודא שהפתרון לא יוצר חלוקה באפס. לכן, עלינו תמיד לבדוק את תנאי הקיום של המשוואה.</p>
+        </div>
+        
+        <div class="lesson">
+            <h3>שיעור 2: מציאת מכנה משותף</h3>
+            
+            <p>כדי לפתור משוואות עם מכנים, השלב הראשון הוא לרוב מציאת מכנה משותף ו"סילוק המכנים" מהמשוואה.</p>
+            
+            <div class="step">
+                <h4>שלב 1: זיהוי כל המכנים במשוואה</h4>
+                <p>רשמו את כל המכנים המופיעים במשוואה.</p>
+            </div>
+            
+            <div class="step">
+                <h4>שלב 2: מציאת המכנה המשותף הקטן ביותר (מ.מ.ק)</h4>
+                <p>המכנה המשותף הקטן ביותר הוא המספר הקטן ביותר שמתחלק בכל המכנים ללא שארית.</p>
+            </div>
+            
+            <div class="math-example">
+                <p>דוגמה: במשוואה \( \frac{x+3}{6} + \frac{x-1}{9} = \frac{5}{18} \)</p>
+                <p>המכנים הם: 6, 9, 18</p>
+                <p>המ.מ.ק שלהם הוא 18</p>
+            </div>
+        </div>
+        
+        <div class="lesson">
+            <h3>שיעור 3: פתרון משוואות עם מכנה - שיטה כללית</h3>
+            
+            <div class="step">
+                <h4>שלב 1: מצאו את המכנה המשותף</h4>
+            </div>
+            
+            <div class="step">
+                <h4>שלב 2: הכפילו את כל איברי המשוואה במכנה המשותף</h4>
+                <p>פעולה זו "מנקה" את כל המכנים ומובילה למשוואה ליניארית רגילה.</p>
+            </div>
+            
+            <div class="step">
+                <h4>שלב 3: פתרו את המשוואה הליניארית שהתקבלה</h4>
+            </div>
+            
+            <div class="step">
+                <h4>שלב 4: בדקו את תנאי הקיום</h4>
+                <p>וודאו שהפתרון שמצאתם לא גורם לחלוקה באפס באף אחד מהמכנים המקוריים.</p>
+            </div>
+            
+            <div class="math-example">
+                <p>דוגמה מפורטת:</p>
+                <p>נפתור את המשוואה: \( \frac{2x+1}{3} + \frac{x-2}{4} = 5 \)</p>
+                
+                <p><strong>שלב 1:</strong> המכנים הם 3 ו-4, המ.מ.ק שלהם הוא 12</p>
+                
+                <p><strong>שלב 2:</strong> נכפיל את כל המשוואה ב-12:</p>
+                <p>\( 12 \cdot \left( \frac{2x+1}{3} + \frac{x-2}{4} = 5 \right) \)</p>
+                <p>\( \Rightarrow 12 \cdot \frac{2x+1}{3} + 12 \cdot \frac{x-2}{4} = 12 \cdot 5 \)</p>
+                <p>\( \Rightarrow 4(2x+1) + 3(x-2) = 60 \)</p>
+                <p>\( \Rightarrow 8x + 4 + 3x - 6 = 60 \)</p>
+                <p>\( \Rightarrow 11x - 2 = 60 \)</p>
+                <p>\( \Rightarrow 11x = 62 \)</p>
+                <p>\( \Rightarrow x = \frac{62}{11} \)</p>
+                
+                <p><strong>שלב 3:</strong> הפתרון הוא \( x = \frac{62}{11} \)</p>
+                
+                <p><strong>שלב 4:</strong> בדיקת תנאי קיום:</p>
+                <p>המכנים המקוריים הם 3 ו-4, שניהם קבועים ולא תלויים ב-x, לכן אין מגבלות על הפתרון.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 כל הזכויות שמורות - אתר משוואות עם מכנה לכיתה ח'</p>
+    </footer>
+
+    <!-- הוספת MathJax לתצוגת נוסחאות מתמטיות -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['\\(','\\)']]}
+        });
+    </script>
+</body>
+</html>
